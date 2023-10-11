@@ -49,7 +49,7 @@ struct Container1: View {
 }
 
 struct Container2: View {
-    @State var sheet2: Bool = true
+    @State var sheet2: Bool = false
     @Binding var container: ContentView.container
 
     var body: some View {
@@ -63,6 +63,10 @@ struct Container2: View {
                 container = .container1
             }
             Spacer()
+        }.onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                sheet2 = true
+            }
         }
         .padding()
         .sheet(isPresented: $sheet2) {

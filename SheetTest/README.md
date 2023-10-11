@@ -24,3 +24,15 @@ Actual behavior: nothing happens
 
 
 
+### Workaround
+
+The workaround for this is to not initally set `sheet2 = true`, but set `sheet2 = false` and add
+
+```
+.onAppear {
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        sheet2 = true
+    }
+}
+```
+
