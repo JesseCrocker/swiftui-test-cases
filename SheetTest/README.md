@@ -19,6 +19,7 @@ Actual Behavior: it still displays "sheet2 = true"
 5. Click "show sheet 2"
 
 Expected behavior: Sheet 2 shows
+
 Actual behavior: nothing happens
 
 
